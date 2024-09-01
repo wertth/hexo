@@ -1,0 +1,17 @@
+# .devcontainer/Dockerfile.notebook
+
+# 使用官方 Python 镜像作为基础镜像
+FROM python:3.9
+
+# 设置工作目录
+WORKDIR /workspace
+
+# 安装 Jupyter Notebook
+RUN pip install --upgrade pip && \
+    pip install jupyter notebook
+
+# 暴露 Jupyter Notebook 默认端口
+EXPOSE 8888
+
+# 设置 Jupyter Notebook 的启动命令（如果不使用 docker-compose 的 command 参数）
+CMD ["jupyter", "notebook", "--ip=0.0.0.0", "--no-browser", "--allow-root"]

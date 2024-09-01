@@ -1,0 +1,21 @@
+version: '3'
+services:
+  hexo:
+    build:
+      context: .
+      dockerfile: Dockerfile.hexo
+    ports:
+      - "4000:4000"
+    volumes:
+      - ..:/workspace:cached
+    command: hexo server
+
+  notebook:
+    build:
+      context: .
+      dockerfile: Dockerfile.notebook
+    ports:
+      - "8888:8888"
+    volumes:
+      - ..:/workspace:cached
+    command: jupyter notebook --ip=0.0.0.0 --no-browser --allow-root
