@@ -1,0 +1,15 @@
+{
+    "name": "Hexo Development Container",
+    "build": {
+      "dockerfile": "Dockerfile"
+    },
+    "settings": {
+      "terminal.integrated.defaultProfile.linux": "/bin/bash"
+    },
+    "forwardPorts": [4000],
+    "extensions": [
+      "dbaeumer.vscode-eslint",
+      "esbenp.prettier-vscode"
+    ]
+  }
+  
