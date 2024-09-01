@@ -1,10 +1,10 @@
 # .devcontainer/Dockerfile.hexo
 
 # 使用官方 Node.js 镜像作为基础镜像
-FROM node:16
+FROM node:18
 
 # 设置工作目录
-WORKDIR /workspace
+WORKDIR /workspace/myblog
 
 # 安装 Hexo CLI
 RUN npm install -g hexo-cli && hexo -v
@@ -12,5 +12,5 @@ RUN npm install -g hexo-cli && hexo -v
 # 暴露 Hexo 默认端口
 EXPOSE 4000
 
-# 设置 Hexo 的启动命令（如果不使用 docker-compose 的 command 参数）
+# 启动 Hexo 服务
 CMD ["hexo", "server"]

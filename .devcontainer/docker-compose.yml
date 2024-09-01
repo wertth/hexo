@@ -7,8 +7,8 @@ services:
     ports:
       - "4000:4000"
     volumes:
-      - ..:/workspace:cached
-    command: hexo server
+      - ../myblog:/workspace/myblog:cached
+    command: sh -c "npm install && hexo generate && hexo server"
 
   notebook:
     build:
